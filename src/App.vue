@@ -1,49 +1,53 @@
 <template>
-    <navbar
-        :theme="theme"
-        :activePage="activePage"
-        :pages="pages"
-        :nav-link-click="(index) => activePage = index"
-    ></navbar>
-
-    <page-viewer
-        v-if="pages.length > 0"
-        :page="pages[activePage]"
-    ></page-viewer>
+    <div>
+        <stepper
+            :active-step="activeStep"
+            :steps="steps"
+        ></stepper>
+    </div>
+    <main class="flex justify-center">
+        <Info
+            v-if="activeStep == 0"
+            
+        ></Info>
+    </main>
 </template>
 <script>
-import Navbar from './components/Navbar.vue';
-import PageViewer from './components/PageViewer.vue';
+import Stepper from "./components/Stepper.vue";
+import Info from "./components/Info.vue";
 
 export default{
     components:{
-        Navbar,
-        PageViewer
+        Stepper,
+        Info
     },
     created(){
-        this.getPages();
-        this.getThemeSettings()
     },
     data(){
         return{
-            theme: '-',
-            activePage: 0,
-            pages: []
+            activeStep : 0,
+            steps : [
+                { icon : "fa-info"},
+                { icon : "fa-code"},
+                { icon : "fa-list-check"},
+            ]
         };
     },
     methods:{
-        async getPages(){
-            let res = await fetch('page.json')
-            let data = await res.json();
-
-            this.pages = data
+        getQuestions(){
+            
         },
-        getThemeSettings(){
-            let theme = localStorage.getItem('theme')
-            if(theme){
-                this.theme = theme
-            }
+        startQuiz(){
+            this.activeStep = 1;
         }
     }
 }
 </script>
+
+<style>
+@import './assets/css/style.css';
+    body{
+        height: 100vh;
+        background: url('./assets/img/layered-waves-haikei.svg') no-repeat center center fixed;
+    }
+</style>
