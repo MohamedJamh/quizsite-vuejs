@@ -19,9 +19,7 @@
 
 <script>
 export default{
-    props : ['startQuiz'],
-    methods: {
-    }
+    
 }
 </script>
 

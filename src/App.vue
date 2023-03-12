@@ -6,25 +6,32 @@
         ></stepper>
     </div>
     <main class="flex justify-center">
-        <Info
+        <info
             v-if="activeStep == 0"
-            
-        ></Info>
+        ></info>
+        <questions
+            v-if="activeStep == 1"
+            :questions="questions"
+        ></questions>
     </main>
 </template>
 <script>
-import Stepper from "./components/Stepper.vue";
-import Info from "./components/Info.vue";
+import stepper from "./components/Stepper.vue";
+import info from "./components/Info.vue";
+import questions from "./components/Questions.vue";
 
 export default{
     components:{
-        Stepper,
-        Info
+        stepper,
+        info,
+        questions
     },
     created(){
+        this.getQuestions()
     },
     data(){
         return{
+            questions : [],
             activeStep : 0,
             steps : [
                 { icon : "fa-info"},
@@ -34,8 +41,9 @@ export default{
         };
     },
     methods:{
-        getQuestions(){
-            
+        async getQuestions(){
+            let res = await fetch('questions.json')
+            this.questions = await res.json()
         },
         startQuiz(){
             this.activeStep = 1;
