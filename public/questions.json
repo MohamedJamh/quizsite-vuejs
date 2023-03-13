@@ -1,102 +1,122 @@
 [
   {
-    "question": "Que signifie PHP?",
+    "id" : 1,
+    "question": "What does PHP stand for?",
     "choices":[
-        "Personal Home Page Hypertext Preprocessor",
-        "Pretext Hypertext Processor",
-        "Preprocessor Home Page",
-        "Pretext Hypertext Processor"
+      "Personal Home Page Hypertext Preprocessor",
+      "Pretext Hypertext Processor",
+      "Preprocessor Home Page",
+      "Pretext Hypertext Processor"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "PHP stands for 'Personal Home Page Hypertext Preprocessor', which reflects its origin as a tool designed for building personal home pages, and its main function as a preprocessor for dynamically generating web pages."
   },
   {
-    "question": "Les fichiers PHP ont l’extension …. ?",
+    "id" : 2,
+    "question": "PHP files have the extension....?",
     "choices":[
-      ".html", 
+      ".html",
       ".xml",
-      ".php", 
+      ".php",
       ".ph"
     ],
-    "answer": 3
+    "answer": 3,
+    "explanation": "PHP files have the '.php' extension. This allows the web server to know that the file should be processed as a PHP script, and to pass it to the PHP interpreter for execution."
   },
   {
-    "question": "Un script PHP devrait commencer par ___ ?",
+    "id" : 3,
+    "question": "A PHP script should start with ___ ?",
     "choices":[
-      "<php", 
-      "<?", 
-      "<?php", 
+      "<php",
+      "<?",
+      "<?php",
       "php"
     ],
-    "answer": 3
+    "answer": 3,
+    "explanation": "A PHP script should start with the '<?php' tag. This tells the web server that the following code should be interpreted as PHP code, and to pass it to the PHP interpreter accordingly."
   },
   {
-    "question": "Quelle version de PHP a introduit Try/catch Exception?",
+    "id" : 4,
+    "question": "Which version of PHP introduced Try/catch Exception?",
     "choices":[
-      "PHP 4", 
+      "PHP 4",
       "PHP 5",
-      "PHP 5.3", 
+      "PHP 5.3",
       "PHP 7.2"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Try/catch Exception was introduced in PHP 5. This feature provides a structured approach to handling errors and exceptions in PHP code."
   },
   {
-    "question": "Les espaces de noms ou « namespaces » sont disponibles depuis quelle version ?",
+    "id" : 5,
+    "question": "When were namespaces introduced in PHP?",
     "choices":[
-      "PHP 4", 
-      "PHP 5", 
+      "PHP 4",
+      "PHP 5",
       "PHP 5.3",
       "PHP 6"
     ],
-    "answer": 4
+    "answer": 4,
+    "explanation": "Namespaces were originally planned for PHP 5.3, but were eventually included in PHP 5.3.0. They provide a way to group related classes, functions, and constants under a common namespace, reducing the likelihood of naming collisions in large codebases."
   },
   {
-    "question": "Laquelle des portées suivantes n’est pas prise en charge en PHP?",
+    "id" : 6,
+    "question": "Which of the following scopes is not supported in PHP?",
     "choices":[
-      "static", 
-      "final", 
-      "public", 
+      "static",
+      "final",
+      "public",
       "friendly"
     ],
-    "answer": 4
+    "answer": 4,
+    "explanation": "PHP does not support the 'friendly' scope. The 'final' scope is used to indicate that a class or method cannot be overridden by subclasses, while the 'static' and 'public' scopes are used to control the visibility and accessibility of class members."
   },
   {
-    "question": "Les variables membres d’une classe sont également appelées __________?",
+    "id" : 7,
+    "question": "Member variables of a class are also called __?",
     "choices":[
-      "les attributs", 
-      "des propriétés", 
-      "des instances", 
-      "tous les réponses sont vrais"
+        "attributes",
+        "properties",
+        "instances",
+        "all answers are correct"
     ],
-    "answer": 4
+    "answer": 4,
+    "explanation": "Member variables of a class are also called attributes. Attributes hold the state of an object and represent the data that is associated with the object."
   },
   {
-    "question": "Les méthodes sont également appelées des_______?",
+    "id" : 8,
+    "question": "Methods are also called?",
     "choices":[
-      "fonction membre",
-      "instances",
-      "objects", 
-      "constructeurs"
+        "member functions",
+        "instances",
+        "objects",
+        "constructors"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Methods are also known as member functions, as they are functions that are associated with a class or an object. Methods can be used to perform actions or to provide information about an object's state."
   },
   {
-    "question": " Quelle mot-clé empêche une méthode d’être redéfinie par une classe file?",
+    "id" : 9,
+    "question": "Which keyword prevents a method from being redefined by a subclass?",
     "choices":[
-      "abstract",
-      "protected",
-      "final",
-      "static"
+        "abstract",
+        "protected",
+        "final",
+        "static"
     ],
-    "answer": 3
+    "answer": 3,
+    "explanation": "The keyword 'final' is used to prevent a method from being redefined by a subclass. When a method is marked as final, it cannot be overridden by a subclass, and any attempts to do so will result in a compilation error."
   },
   {
-    "question": "Nous pouvons utiliser ___ pour commenter une seule ligne?",
+    "id" : 10,
+    "question": "We can use ___ to comment on a single line?",
     "choices":[
-      "/?", 
-      "#", 
-      "//",
-      "/* */"
+        "/?",
+        "#",
+        "//",
+        "/* */"
     ],
-    "answer": 3
+    "answer": 3,
+    "explanation": "The double forward slash (//) is used to comment on a single line in many programming languages, including Java, C++, and JavaScript. Anything that comes after the // on a line is ignored by the compiler or interpreter, and is treated as a comment."
   }
 ]

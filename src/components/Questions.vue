@@ -29,7 +29,7 @@
                 <button
                     v-if="currentQuestion == this.questions.length - 1"
                     class="bg-rose-600 px-10 py-2 rounded-lg text-white text-xl"
-                    @click="this.$parent.activeStep = 2"
+                    @click="this.finishQuiz()"
                 >Finish</button>
             </div>
         </div>
@@ -56,10 +56,18 @@ export default {
     methods: {
         submitQuestion(index){
             if(this.currentQuestion + 1 != this.questions.length){
-
                 this.selctedAnswer = index
                 if(index+1 == this.questions[this.currentQuestion].answer){
                     this.score += this.perQuestion
+                }else{
+                    // log logique here
+                    let answer = {}
+                    let corrcetAnswerIndex = this.questions[this.currentQuestion].answer - 1
+                    answer['question'] = this.questions[this.currentQuestion].question
+                    answer['wrong-answer'] = this.questions[this.currentQuestion].choices[index]
+                    answer['correct-answer'] = this.questions[this.currentQuestion].choices[corrcetAnswerIndex]
+                    answer['explanation'] = this.questions[this.currentQuestion].explanation
+                    this.log.unshift(answer)
                 }
                 setTimeout(function(){
                     this.nextQuestion()
@@ -71,6 +79,13 @@ export default {
             this.selctedAnswer = null
             // moving to next question
             this.percentage += this.perQuestion
+        },
+        finishQuiz(){
+            this.$emit('details',{
+                'score' : this.score,
+                'log' : this.log
+            })
+            this.$parent.activeStep = 2
         }
     },
 }

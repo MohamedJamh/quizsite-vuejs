@@ -12,19 +12,26 @@
         <questions
             v-if="activeStep == 1"
             :questions="questions"
+            @details = "onFinish"
         ></questions>
+        <score
+            v-if="activeStep == 2"
+            :details="details"
+        ></score>
     </main>
 </template>
 <script>
 import stepper from "./components/Stepper.vue";
 import info from "./components/Info.vue";
 import questions from "./components/Questions.vue";
+import score from "./components/Score.vue";
 
 export default{
     components:{
         stepper,
         info,
-        questions
+        questions,
+        score
     },
     created(){
         this.getQuestions()
@@ -37,7 +44,8 @@ export default{
                 { icon : "fa-info"},
                 { icon : "fa-code"},
                 { icon : "fa-list-check"},
-            ]
+            ],
+            details : {}
         };
     },
     methods:{
@@ -47,6 +55,9 @@ export default{
         },
         startQuiz(){
             this.activeStep = 1;
+        },
+        onFinish(details){
+            this.details = details
         }
     }
 }
