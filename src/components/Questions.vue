@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        {{ score }}
         <div class="bg-white w-full rounded-lg p-5">
             <div class="my-2">
                 <p class="font-semibold text-3xl">{{ questions[currentQuestion].question }}</p>
@@ -27,7 +26,7 @@
                     >{{ percentage }}%</div>
                 </div>
                 <button
-                    v-if="currentQuestion == this.questions.length - 1"
+                    v-if="currentQuestion == this.questions.length"
                     class="bg-rose-600 px-10 py-2 rounded-lg text-white text-xl"
                     @click="this.finishQuiz()"
                 >Finish</button>
@@ -55,7 +54,7 @@ export default {
     },
     methods: {
         submitQuestion(index){
-            if(this.currentQuestion + 1 != this.questions.length){
+            if(this.currentQuestion != this.questions.length ){
                 this.selctedAnswer = index
                 if(index+1 == this.questions[this.currentQuestion].answer){
                     this.score += this.perQuestion
@@ -77,7 +76,6 @@ export default {
         nextQuestion(){
             this.currentQuestion += 1 
             this.selctedAnswer = null
-            // moving to next question
             this.percentage += this.perQuestion
         },
         finishQuiz(){
