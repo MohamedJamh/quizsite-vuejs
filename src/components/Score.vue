@@ -16,7 +16,7 @@
             <div v-else class="text-center text-3xl">**Good Job**</div>
         </div>
         <div class="flex gap-5 justify-end my-3">
-            <button class="bg-rose-600 px-10 py-2 rounded-lg text-white text-xl" @click="this.$parent.startQuiz()">
+            <button class="bg-rose-600 px-10 py-2 rounded-lg text-white text-xl" @click="this.$parent.startQuiz(this.choosedQuiz)">
                 <i class="fa-solid fa-repeat" ></i>
             </button>
             <button class="bg-rose-600 px-10 py-2 rounded-lg text-white text-xl" @click="quitQuiz()">
@@ -29,7 +29,7 @@
 
 <script>
 export default{
-    props:['questions','details'],
+    props:['questions','details','choosedQuiz'],
     methods: {
         quitQuiz(){
             this.$parent.activeStep = 0

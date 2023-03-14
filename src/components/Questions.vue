@@ -39,6 +39,7 @@
 export default {
     props : ['questions'],
     created(){
+        console.log(this.questions.length)
         this.percentage = this.perQuestion
         this.questions.sort(function(){ return Math.random() - 0.5; })
     },
@@ -54,29 +55,31 @@ export default {
     },
     methods: {
         submitQuestion(index){
-            if(this.currentQuestion != this.questions.length ){
-                this.selctedAnswer = index
-                if(index+1 == this.questions[this.currentQuestion].answer){
-                    this.score += this.perQuestion
-                }else{
-                    // log logique here
-                    let answer = {}
-                    let corrcetAnswerIndex = this.questions[this.currentQuestion].answer - 1
-                    answer['question'] = this.questions[this.currentQuestion].question
-                    answer['wrong-answer'] = this.questions[this.currentQuestion].choices[index]
-                    answer['correct-answer'] = this.questions[this.currentQuestion].choices[corrcetAnswerIndex]
-                    answer['explanation'] = this.questions[this.currentQuestion].explanation
-                    this.log.unshift(answer)
-                }
-                setTimeout(function(){
-                    this.nextQuestion()
-                }.bind(this),1000);
+            this.selctedAnswer = index
+            if(index+1 == this.questions[this.currentQuestion].answer){
+                this.score += this.perQuestion
+            }else{
+                // log logique here
+                let answer = {}
+                let corrcetAnswerIndex = this.questions[this.currentQuestion].answer - 1
+                answer['question'] = this.questions[this.currentQuestion].question
+                answer['wrong-answer'] = this.questions[this.currentQuestion].choices[index]
+                answer['correct-answer'] = this.questions[this.currentQuestion].choices[corrcetAnswerIndex]
+                answer['explanation'] = this.questions[this.currentQuestion].explanation
+                this.log.unshift(answer)
             }
+            setTimeout(function(){
+                this.nextQuestion()
+            }.bind(this),1000);
         },
         nextQuestion(){
+            console.log(this.currentQuestion)
             this.currentQuestion += 1 
             this.selctedAnswer = null
             this.percentage += this.perQuestion
+            if(this.currentQuestion === this.questions.length ){
+                this.finishQuiz()
+            }
         },
         finishQuiz(){
             this.$emit('details',{
