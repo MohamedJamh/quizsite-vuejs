@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "question": "What is Vue.js?",
+        "choices": [
+        "A back-end framework",
+        "A front-end framework",
+        "A database management system",
+        "A programming language"
+        ],
+        "answer": 2,
+        "explanation": "Vue.js is a front-end framework used for building user interfaces and single-page applications."
+    },
+        
+    {
+        "id": 2,
+        "question": "What is the core feature of Vue.js?",
+        "choices": [
+        "Two-way data binding",
+        "Server-side rendering",
+        "Dependency injection",
+        "Object-oriented programming"
+        ],
+        "answer": 1,
+        "explanation": "Two-way data binding allows for automatic synchronization between the model and the view."
+    }, 
+    {
+        "id": 3,
+        "question": "What is a Vue.js component?",
+        "choices": [
+        "A function that returns HTML",
+        "A class that defines a data structure",
+        "A self-contained piece of code with its own HTML, CSS, and JavaScript",
+        "A module that handles user input"
+        ],
+        "answer": 3,
+        "explanation": "A Vue.js component is a self-contained piece of code that can be reused throughout a web application."
+    },
+    {
+        "id": 4,
+        "question": "What is Vuex?",
+        "choices": [
+        "A CSS preprocessor",
+        "A state management pattern and library",
+        "A server-side rendering framework",
+        "An automation tool for front-end development"
+        ],
+        "answer": 2,
+        "explanation": "Vuex is a state management pattern and library for Vue.js applications."
+    },
+        
+    {
+        "id": 5,
+        "question": "What is Vue Router?",
+        "choices": [
+        "A tool for managing API requests",
+        "A library for creating custom directives",
+        "A tool for routing between views in a single-page application",
+        "A library for handling user authentication"
+        ],
+        "answer": 3,
+        "explanation": "Vue Router is a tool for routing between views in a single-page application built with Vue.js."
+    },
+        
+    {
+        "id": 6,
+        "question": "What is the v-for directive used for in Vue.js?",
+        "choices": [
+        "Creating custom components",
+        "Iterating over an array or object",
+        "Managing form input",
+        "Conditionally rendering elements"
+        ],
+        "answer": 2,
+        "explanation": "The v-for directive is used to render a list of items based on an array or object."
+    },
+        
+    {
+        "id": 7,
+        "question": "What is the v-bind directive used for in Vue.js?",
+        "choices": [
+        "Binding an attribute to an expression",
+        "Creating custom components",
+        "Iterating over an array or object",
+        "Conditionally rendering elements"
+        ],
+        "answer": 1,
+        "explanation": "The v-bind directive is used to bind an attribute to an expression, allowing for dynamic updates to the attribute based on changes in the data."
+    },
+        
+    {
+        "id": 8,
+        "question": "What is the v-if directive used for in Vue.js?",
+        "choices": [
+        "Iterating over an array or object",
+        "Conditionally rendering elements",
+        "Creating custom components",
+        "Binding an attribute to an expression"
+        ],
+        "answer": 2,"explanation": "The v-if directive is used to conditionally render elements based on a Boolean expression. If the expression evaluates to true, the element is displayed; if it evaluates to false, the element is not displayed."
+    },
+    
+    {
+        "id": 9,
+        "question": "What is the difference between props and state in Vue.js?",
+        "choices": [
+        "Props are used to pass data down from a parent component to a child component, while state is used to manage data within a component",
+        "Props are used to manage data within a component, while state is used to pass data down from a parent component to a child component",
+        "Props and state are the same thing",
+        "Props and state are both used to manage data within a component"
+        ],
+        "answer": 1,
+        "explanation": "Props are used to pass data down from a parent component to a child component, while state is used to manage data within a component."
+    },
+    
+    {
+        "id": 10,
+        "question": "What is the difference between Vue.js 2 and Vue.js 3?",
+        "choices": [
+        "Vue.js 3 has better performance than Vue.js 2",
+        "Vue.js 3 has a simpler API than Vue.js 2",
+        "Vue.js 3 is not compatible with Vue.js 2",
+        "There is no difference between Vue.js 2 and Vue.js 3"
+        ],
+        "answer": 1,
+        "explanation": "Vue.js 3 has better performance than Vue.js 2, due to improvements in the reactivity system and virtual DOM implementation."
+    }
+]

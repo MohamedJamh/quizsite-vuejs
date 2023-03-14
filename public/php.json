@@ -1,0 +1,122 @@
+[
+  {
+    "id" : 1,
+    "question": "What does PHP stand for?",
+    "choices":[
+      "Personal Home Page Hypertext Preprocessor",
+      "Pretext Hypertext Processor",
+      "Preprocessor Home Page",
+      "Pretext Hypertext Processor"
+    ],
+    "answer": 1,
+    "explanation": "PHP stands for 'Personal Home Page Hypertext Preprocessor', which reflects its origin as a tool designed for building personal home pages, and its main function as a preprocessor for dynamically generating web pages."
+  },
+  {
+    "id" : 2,
+    "question": "PHP files have the extension....?",
+    "choices":[
+      ".html",
+      ".xml",
+      ".php",
+      ".ph"
+    ],
+    "answer": 3,
+    "explanation": "PHP files have the '.php' extension. This allows the web server to know that the file should be processed as a PHP script, and to pass it to the PHP interpreter for execution."
+  },
+  {
+    "id": 3,
+    "question": "Un script PHP devrait commencer par ___ ?",
+    "choices": [
+      "<php",
+      "<?",
+      "<?php",
+      "php"
+    ],
+    "answer": 3,
+    "explanation": "Un script PHP devrait commencer par <?php. Cela indique au serveur Web que le fichier contient du code PHP."
+  },
+  {
+    "id": 4,
+    "question": "Quelle version de PHP a introduit Try/catch Exception?",
+    "choices": [
+      "PHP 4",
+      "PHP 5",
+      "PHP 5.3",
+      "PHP 7.2"
+    ],
+    "answer": 2,
+    "explanation": "La version de PHP qui a introduit le bloc Try/catch Exception est la version 5. Cette fonctionnalité est importante pour la gestion des erreurs dans le code PHP."
+  },
+  {
+    "id": 5,
+    "question": "Les espaces de noms ou « namespaces » sont disponibles depuis quelle version ?",
+    "choices": [
+      "PHP 4",
+      "PHP 5",
+      "PHP 5.3",
+      "PHP 6"
+    ],
+    "answer": 4,
+    "explanation": "Les espaces de noms (« namespaces » en anglais) sont disponibles depuis PHP 5.3. Ils permettent de résoudre les conflits de noms de classes et de fonctions dans les grandes applications."
+  },
+  {
+    "id": 6,
+    "question": "Laquelle des portées suivantes n’est pas prise en charge en PHP?",
+    "choices": [
+      "static",
+      "final",
+      "public",
+      "friendly"
+    ],
+    "answer": 4,
+    "explanation": "La portée 'friendly' n'existe pas en PHP. Les trois autres portées - 'static', 'final', et 'public' - sont prises en charge en PHP et sont utilisées pour définir l'accès aux propriétés et méthodes d'une classe."
+  },
+  {
+    "id" : 7,
+    "question": "Member variables of a class are also called __?",
+    "choices":[
+        "attributes",
+        "properties",
+        "instances",
+        "all answers are correct"
+    ],
+    "answer": 4,
+    "explanation": "Member variables of a class are also called attributes. Attributes hold the state of an object and represent the data that is associated with the object."
+  },
+  {
+    "id" : 8,
+    "question": "Methods are also called?",
+    "choices":[
+        "member functions",
+        "instances",
+        "objects",
+        "constructors"
+    ],
+    "answer": 1,
+    "explanation": "Methods are also known as member functions, as they are functions that are associated with a class or an object. Methods can be used to perform actions or to provide information about an object's state."
+  },
+  {
+    "id" : 9,
+    "question": "Which keyword prevents a method from being redefined by a subclass?",
+    "choices":[
+        "abstract",
+        "protected",
+        "final",
+        "static"
+    ],
+    "answer": 3,
+    "explanation": "The keyword 'final' is used to prevent a method from being redefined by a subclass. When a method is marked as final, it cannot be overridden by a subclass, and any attempts to do so will result in a compilation error."
+  },
+  {
+    "id" : 10,
+    "question": "We can use ___ to comment on a single line?",
+    "choices":[
+        "/?",
+        "#",
+        "//",
+        "/* */"
+    ],
+    "answer": 3,
+    "explanation": "The double forward slash (//) is used to comment on a single line in many programming languages, including Java, C++, and JavaScript. Anything that comes after the // on a line is ignored by the compiler or interpreter, and is treated as a comment."
+  }
+]

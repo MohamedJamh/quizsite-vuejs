@@ -1,49 +1,80 @@
 <template>
-    <navbar
-        :theme="theme"
-        :activePage="activePage"
-        :pages="pages"
-        :nav-link-click="(index) => activePage = index"
-    ></navbar>
-
-    <page-viewer
-        v-if="pages.length > 0"
-        :page="pages[activePage]"
-    ></page-viewer>
+    <div>
+        <stepper
+            :active-step="activeStep"
+            :steps="steps"
+        ></stepper>
+    </div>
+    <main class="flex justify-center">
+        <info
+            v-if="activeStep == 0"
+            :quizes="quizes"
+        ></info>
+        <questions
+            v-if="activeStep == 1"
+            :questions="questions"
+            @details = "onFinish"
+        ></questions>
+        <score
+            v-if="activeStep == 2"
+            :choosed-quiz="choosedQuiz"
+            :details="details"
+        ></score>
+    </main>
 </template>
 <script>
-import Navbar from './components/Navbar.vue';
-import PageViewer from './components/PageViewer.vue';
+import stepper from "./components/Stepper.vue";
+import info from "./components/Info.vue";
+import questions from "./components/Questions.vue";
+import score from "./components/Score.vue";
 
 export default{
     components:{
-        Navbar,
-        PageViewer
+        stepper,
+        info,
+        questions,
+        score
     },
     created(){
-        this.getPages();
-        this.getThemeSettings()
     },
     data(){
         return{
-            theme: '-',
-            activePage: 0,
-            pages: []
+            choosedQuiz : null,
+            questions : [],
+            activeStep : 0,
+            steps : [
+                { icon : "fa-info"},
+                { icon : "fa-code"},
+                { icon : "fa-list-check"},
+            ],
+            quizes : [
+                {name:"PHP",pathName:"php"},
+                {name:"VueJs",pathName:"vuejs"}
+            ],
+            details : {}
         };
     },
     methods:{
-        async getPages(){
-            let res = await fetch('page.json')
-            let data = await res.json();
-
-            this.pages = data
+        async getQuestions(value){
+            let res = await fetch(`${value}.json`)
+            this.questions = await res.json()
         },
-        getThemeSettings(){
-            let theme = localStorage.getItem('theme')
-            if(theme){
-                this.theme = theme
-            }
+        async startQuiz(choosedQuiz){
+            this.choosedQuiz = choosedQuiz
+            await this.getQuestions(choosedQuiz)
+            this.activeStep = 1;
+        },
+        onFinish(details){
+            this.details = details
         }
     }
 }
 </script>
+
+<style>
+@import './assets/css/style.css';
+    body{
+        height: 80vh;
+        background: url('./assets/img/layered-waves-haikei.svg') no-repeat center center fixed;
+    }
+</style>
