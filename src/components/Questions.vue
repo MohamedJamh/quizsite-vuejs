@@ -39,7 +39,6 @@
 export default {
     props : ['questions'],
     created(){
-        console.log(this.questions.length)
         this.percentage = this.perQuestion
         this.questions.sort(function(){ return Math.random() - 0.5; })
     },
